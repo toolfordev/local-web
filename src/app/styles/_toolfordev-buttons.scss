@@ -1,0 +1,22 @@
+@import 'toolfordev-colors';
+
+.toolfordev-button {
+    color: white;
+    width: 100%;
+    font-size: 14px;
+
+    &-success {
+        @extend .toolfordev-button;
+        background-color: $toolfordev-color-action-success;
+    }
+
+    &-danger {
+        @extend .toolfordev-button;
+        background-color: $toolfordev-color-action-danger;
+    }
+
+    &-primary {
+        @extend .toolfordev-button;
+        background-color: $toolfordev-color-action-primary;
+    }
+}

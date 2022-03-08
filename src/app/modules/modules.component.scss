@@ -1,0 +1,39 @@
+@import '../styles/toolfordev-colors';
+
+.toolfordev-navbar {
+    color: white;
+    background-color: $toolfordev-color-primary;
+    display: grid;
+    grid-template-columns: 10px 150px 20px auto 10px;
+    grid-template-rows: 10px auto 10px;
+    margin-bottom: 20px;
+}
+
+.toolfordev-navbar-brand {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.toolfordev-navbar-brand button {
+    width: 100%;
+    height: 40px;
+}
+
+.toolfordev-navbar-brand button {
+    font-size: 20px;
+    height: 40px;
+}
+
+.toolfordev-navbar-menu {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.toolfordev-navbar-menu button {
+    font-size: 20px;
+    height: 40px;
+}

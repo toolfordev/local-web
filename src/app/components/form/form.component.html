@@ -1,0 +1,56 @@
+<div class="toolfordev-form-container">
+  <mat-card class="toolfordev-form-card">
+    <mat-card-header class="toolfordev-form-card-header">
+      <mat-card-title class="toolfordev-form-card-title">{{this.title}}</mat-card-title>
+      <mat-card-subtitle class="toolfordev-form-card-subtitle">{{this.subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="toolfordev-form" [formGroup]="this.formGroup" (ngSubmit)="onSubmit()">
+        <input *ngIf="!this.isCreate" [formControlName]="this.idFormControlName" type="hidden">
+        <mat-form-field *ngFor="let inputDescription of this.inputDescriptions" appearance="outline">
+          <mat-label>{{inputDescription.label}}</mat-label>
+          <input *ngIf="inputDescription.type === 'text'" matInput [formControlName]="inputDescription.name"
+            [readonly]="this.isRead || this.isDelete" type="text">
+          <input *ngIf="inputDescription.type === 'number'" matInput [formControlName]="inputDescription.name"
+            [readonly]="this.isRead || this.isDelete" type="number">
+          <input *ngIf="inputDescription.type === 'email'" matInput [formControlName]="inputDescription.name"
+            [readonly]="this.isRead || this.isDelete" type="email">
+            <input *ngIf="inputDescription.type === 'password'" matInput [formControlName]="inputDescription.name"
+            [readonly]="this.isRead || this.isDelete" type="password">
+          <mat-icon matSuffix>{{inputDescription.icon}}</mat-icon>
+        </mat-form-field>
+        <div class="toolfordev-form-buttons">
+
+          <button *ngIf="this.isCreate" mat-raised-button class="toolfordev-form-button toolfordev-button-success" type="submit"
+            [disabled]="formGroup.invalid">
+            <mat-icon>create</mat-icon>Adicionar
+          </button>
+          <button *ngIf="this.isUpdate" mat-raised-button class="toolfordev-form-button toolfordev-button-primary" type="submit"
+            [disabled]="formGroup.invalid">
+            <mat-icon>edit</mat-icon>Atualizar
+          </button>
+          <button *ngIf="this.isDelete" mat-raised-button class="toolfordev-form-button toolfordev-button-danger" type="submit">
+            <mat-icon>delete</mat-icon>Remover
+          </button>
+
+          <a *ngIf="this.isCreate" mat-raised-button class="toolfordev-form-button toolfordev-button-danger"
+            routerLink="..">
+            <mat-icon>close</mat-icon>Cancelar
+          </a>
+          <a *ngIf="this.isUpdate" mat-raised-button class="toolfordev-form-button toolfordev-button-danger"
+            routerLink="../..">
+            <mat-icon>close</mat-icon>Cancelar
+          </a>
+          <a *ngIf="this.isDelete" mat-raised-button class="toolfordev-form-button toolfordev-button-primary"
+            routerLink="../..">
+            <mat-icon>close</mat-icon>Cancelar
+          </a>
+          <a *ngIf="this.isRead" mat-raised-button class="toolfordev-form-button toolfordev-button-primary" routerLink="../..">
+            <mat-icon>undo</mat-icon>Voltar
+          </a>
+
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

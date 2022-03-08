@@ -1,0 +1,21 @@
+<div class="toolfordev-navbar">
+  <div class="toolfordev-navbar-brand">
+      <button mat-button routerLink="/">
+          <span style="font-size: 20px;">Toolfordev</span>
+      </button>
+  </div>
+  <div class="toolfordev-navbar-menu">
+      <button mat-button [matMenuTriggerFor]="globalVariable">Global Variables</button>
+      <mat-menu #globalVariable="matMenu">
+          <button mat-menu-item routerLink="global-variable/create">Create</button>
+          <button mat-menu-item routerLink="global-variable/list">List</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="encryptedVariable">Encrypted Variables</button>
+      <mat-menu #encryptedVariable="matMenu">
+          <button mat-menu-item routerLink="encrypted-variable/create">Create</button>
+          <button mat-menu-item routerLink="encrypted-variable/list">List</button>
+      </mat-menu>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

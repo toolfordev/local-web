@@ -1,0 +1,38 @@
+@import '../../styles/toolfordev-buttons';
+
+.toolfordev-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolfordev-form-card {
+  width: 500px;
+}
+
+.toolfordev-form-card-header {
+  justify-content: center;
+}
+
+.toolfordev-form-card-title,
+.toolfordev-form-card-subtitle {
+  text-align: center;
+}
+
+.toolfordev-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolfordev-form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.toolfordev-form-button {
+  width: 130px;
+  margin-left: 10px;
+}
